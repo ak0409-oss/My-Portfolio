@@ -841,7 +841,12 @@
       align-items: center;
       justify-content: space-between;
     }
-    
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .footer-copy span { color: var(--accent); }
     .back-top {
       font-family: var(--font-mono);
       font-size: 0.72rem;
@@ -971,18 +976,14 @@
             <div class="stat-label">Shipped Projects</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">8.25</div>
-            <div class="stat-label">CGPA @ KIIT</div>
-          </div>
-          <div class="stat-item">
             <div class="stat-num">7+</div>
             <div class="stat-label">Languages</div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: photo card -->
-      <div class="hero-photo-wrap reveal reveal-delay-2">
+      <!-- RIGHT: photo card (removed per preference) -->
+      <div class="hero-photo-wrap reveal reveal-delay-2" style="display:none">
         <div class="hero-photo-card">
           <div class="corner-accent corner-tl"></div>
           <div class="corner-accent corner-br"></div>
@@ -1225,7 +1226,10 @@
     </div>
 
     <!-- Coursework projects -->
-    <div class="coursework-title reveal">Coursework &amp; Lab Work</div>
+    <div class="coursework-title reveal">Coursework, Lab Work &amp; Academic Projects</div>
+
+    <!-- Sub-label: core CS -->
+    <p class="section-label" style="margin-bottom:16px; margin-top:0;" class="reveal">Core CS Labs</p>
     <div class="coursework-grid">
       <div class="cw-card reveal reveal-delay-1">
         <div class="cw-card-title">DBMS Labs / DM&amp;DW</div>
@@ -1238,6 +1242,64 @@
       <div class="cw-card reveal reveal-delay-3">
         <div class="cw-card-title">Networking Practicals</div>
         <p class="cw-card-desc">Built TCP client–server with request/response parsing. Implemented Stop-and-Wait and Go-Back-N over UDP. Created Packet Tracer topology with DHCP/DNS.</p>
+      </div>
+    </div>
+
+    <!-- Sub-label: AI lab -->
+    <p class="section-label" style="margin-bottom:16px; margin-top:48px;" class="reveal">AI Lab — Search &amp; Optimisation</p>
+    <div class="coursework-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="cw-card reveal reveal-delay-1">
+        <div class="cw-card-title">BFS / DFS Maze Solver</div>
+        <p class="cw-card-desc">Solved grid mazes with BFS (shortest path) and DFS (any valid path). Compared nodes explored and visualised traversal order.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-2">
+        <div class="cw-card-title">Uniform Cost Search</div>
+        <p class="cw-card-desc">Implemented UCS on weighted transport graphs for optimal-cost paths. Benchmarked against BFS/DFS and built side-by-side algorithm visualisations.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-3">
+        <div class="cw-card-title">Bi-Directional BFS</div>
+        <p class="cw-card-desc">Built a city-map navigator using bi-directional BFS. Visualised simultaneous frontiers with NetworkX, demonstrating node-exploration savings vs. standard BFS.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-1">
+        <div class="cw-card-title">Greedy Best-First Search</div>
+        <p class="cw-card-desc">Treasure-hunt grid using Manhattan-distance heuristic. Matplotlib colourmap visualisation — black (walls), green (start), yellow (goal), blue (path).</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-2">
+        <div class="cw-card-title">A* Path Planning (Robot Navigation)</div>
+        <p class="cw-card-desc">Implemented A* with both Manhattan (4-dir) and Diagonal-distance (8-dir) heuristics for robot obstacle avoidance. Compared solution quality vs. Greedy BFS.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-3">
+        <div class="cw-card-title">A* 15-Puzzle Solver</div>
+        <p class="cw-card-desc">Solved the 15-tile sliding puzzle using two heuristics — misplaced tiles and sum of Manhattan distances. Compared nodes explored and solution depth across both.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-1">
+        <div class="cw-card-title">Hill Climbing — Water Jug</div>
+        <p class="cw-card-desc">Applied hill climbing to the Water Jug problem using a custom heuristic h = |jug_A − m| + |jug_B − m|. Extended to n-jug variants.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-2">
+        <div class="cw-card-title">Genetic Algorithm — N-Queens</div>
+        <p class="cw-card-desc">Solved 8-Queens and N-Queens (N=10, 20) with a GA (fitness, crossover, mutation). Chessboard visualisation and comparison with A* on conflict-count heuristic.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-3">
+        <div class="cw-card-title">Adversarial Search — Tic-Tac-Toe</div>
+        <p class="cw-card-desc">Implemented MiniMax and Alpha-Beta Pruning for a 4×4 Tic-Tac-Toe AI. Benchmarked node expansion with/without pruning across 10+ game-state scenarios.</p>
+      </div>
+    </div>
+
+    <!-- Sub-label: ML -->
+    <p class="section-label" style="margin-bottom:16px; margin-top:48px;" class="reveal">ML Coding Work</p>
+    <div class="coursework-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="cw-card reveal reveal-delay-1">
+        <div class="cw-card-title">Linear Regression from Scratch</div>
+        <p class="cw-card-desc">Built a full gradient-descent linear regression implementation in Python without ML libraries — manual forward pass, loss computation, and parameter updates.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-2">
+        <div class="cw-card-title">Neural Network — Sine Approximation</div>
+        <p class="cw-card-desc">Designed and trained a small neural network to approximate the sine function, demonstrating universal approximation with non-linear activations and backpropagation.</p>
+      </div>
+      <div class="cw-card reveal reveal-delay-3">
+        <div class="cw-card-title">AI Concepts Relevant to Industry Roles</div>
+        <p class="cw-card-desc">Coursework covered Bayesian Networks, Hidden Markov Models, First-Order Predicate Logic, Knowledge Representation, Planning, and Probabilistic Reasoning — concepts actively used in LLM pipelines, NLP, and decision-making systems.</p>
       </div>
     </div>
   </div>
@@ -1283,7 +1345,7 @@
           </div>
           <div class="contact-item">
             <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="stroke:none"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="var(--accent)" style="stroke:none;width:16px;height:16px;"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </div>
             <div class="contact-detail">
               <div class="label">GitHub</div>
@@ -1323,7 +1385,9 @@
 ============================================================ -->
 <footer>
   <div class="footer-inner">
-    
+    <div class="footer-copy">
+      Built by <span>Amitangshu Kar</span> · Deployed on Vercel · &copy; 2025
+    </div>
     <div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
       Back to top
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
